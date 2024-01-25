@@ -1,0 +1,205 @@
+/* Importation de la police de caractères pour un look rétro */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Réinitialisation de certains styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    /* Utilisation de la police rétro */
+    background-color: #111;
+    /* Fond sombre pour un look console */
+    color: #33ff33;
+    /* Texte vert lumineux, typique des anciennes consoles */
+    line-height: 1.6;
+}
+
+header {
+    background: #000;
+    /* Fond noir pour la barre de navigation */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    /* Affichage horizontal des éléments de navigation */
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #33ff33;
+    /* Couleur de lien harmonisée avec le style général */
+}
+
+main {
+    padding: 20px;
+    /* Espacement pour le contenu principal */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* Style pour les sections : À propos, Compétences, Projets, Contact */
+section#about,
+section#skills,
+section#projects,
+section#contact {
+    background-color: #222;
+    /* Fond légèrement différent pour distinguer les sections */
+    padding: 20px;
+    border: dashed 2px #33ff33;
+    /* Bordure pointillée pour un look rétro */
+}
+
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Style pour les textes dans le footer */
+footer section {
+    padding: 10px 0;
+}
+
+/* Ajout d'effets au survol des liens */
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out forwards;
+    opacity: 0;
+    /* Commence caché */
+}
+
+/* Style pour les paragraphes */
+p {
+    /* Indentation pour la première ligne de chaque paragraphe */
+    text-indent: 40px;
+
+    /* Espacement entre les paragraphes */
+    margin-bottom: 20px;
+
+    /* Justification du texte pour une lecture plus aisée */
+    text-align: justify;
+
+    /* Espacement entre les lignes pour une meilleure lisibilité */
+    line-height: 1.5;
+
+    /* encadrement des paragraphes */
+
+}
+
+
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-content {
+    flex: 1;
+    padding-right: 20px;
+    /* Ajoute un peu d'espace entre le texte et l'animation */
+}
+
+.about-animation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#computer-icon {
+    width: 150px;
+    /* Ou la taille que tu préfères */
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Keyframes pour l'animation "flottante" */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+.skills-animation {
+    flex: 1;
+    padding: 20px;
+}
+
+.skill-container {
+    width: 100%;
+}
+
+.skill-bar {
+    background-color: #333;
+    text-align: left;
+    padding: 3px;
+    position: relative;
+    margin: 10px 0;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-bar:before {
+    content: attr(data-skill);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    width: var(--skill-level, 0);
+    height: 100%;
+    background-color: #33ff33;
+    transition: width 2s ease-in-out;
+    border-radius: 5px 0 0 5px;
+}
+
+
+.skill-name {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding-left: 10px;
+}
